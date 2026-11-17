@@ -29,6 +29,10 @@ jobs:
         with:
           channel: stable
 
+      - name: Generate Android project files
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: flutter create --platforms=android .
+
       - name: Get dependencies
         working-directory: ${{ env.PROJECT_DIR }}
         run: flutter pub get
